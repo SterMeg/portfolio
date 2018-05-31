@@ -1,0 +1,38 @@
+// Colours
+$mainfont: #222222;
+$secondary: #FFF;
+$accent: #B7ADCF;
+$lightBlue: #f9f9ff;
+$gradientPink:#f40e67;
+$gradientYellow: #fccd11;
+
+
+//Mixin for creating scalloped effect in CSS
+@mixin scallops ($backgroundValue, $position){
+  position:absolute;
+  bottom: $position;
+  left: 0px;
+  width: 100%;
+  content:" ";
+  background: $backgroundValue;
+  background-color: transparent;
+  background-size:40px 100px;
+  height:50px;
+  background-repeat: repeat-x;
+  z-index: 10;
+}
+
+//Button style
+@mixin button ($padding, $margin) {
+	background: linear-gradient(to right, $gradientPink 0%, $gradientYellow 100%);
+	color: $secondary;
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	display: block;
+    width: fit-content;
+    text-align: center;
+    padding: $padding;
+    border-radius: 40px;
+    margin: $margin;
+}

@@ -1,2 +1,867 @@
 @import 'setup';
+@import 'utils';
 
+
+/* GENERAL STYLES */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a {
+	color: $mainfont;
+	text-decoration: none;
+	display: inline-block;
+}
+
+img,
+video {
+	display: block;
+	max-width: 100%;
+}
+
+h2 {
+	font-size: 6rem;
+	font-weight: 900;
+	text-transform: capitalize;
+	width: 30%;
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+section {
+	padding-top: 150px;
+	padding-bottom: 40px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1080px;
+	width: 80%;
+}
+
+textarea {
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	resize: none;
+}
+
+/* HEADER STYLES */
+
+/* Navigation styles */
+
+.logo p {
+	font-size: 2rem;
+	font-weight: 900;
+	 background: -webkit-linear-gradient(0deg, $gradientPink 0%, $gradientYellow 100%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navigation {
+	position:relative;
+  	background: $secondary;
+	.wrapper {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		a {
+			padding: 10px;
+		}
+	}
+}
+
+.navigation a:hover {
+	background: linear-gradient(to right, $gradientPink 0%, $gradientYellow 100%);
+	border-radius: 2px;
+	color: $secondary;
+}
+
+.navigation::after { 
+	@include scallops(radial-gradient(circle at 50% 0%, white 25%, rgba(0,0,0,.1) 26%, transparent 30%), -40px);
+}
+
+.menu  {
+	display: flex;
+	font-size: 1.3rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+/* Banner styles */
+
+header .banner {
+	background: linear-gradient(to bottom, rgba(249, 249, 255, .8)),url(../assets/light_grey.png);
+	height: 90vh;
+	position: relative;
+}
+
+.column {
+	width: 50%;
+}
+
+.left {
+	float: left;
+	align-items: center;
+}
+
+.right {
+	float: right;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+header .left, 
+header .right {
+	display: flex;
+}
+
+.banner .wrapper, .left, .right  {
+	height: inherit;
+}
+
+.headshot,
+.headshot img {
+	position: relative;
+}
+
+h1 {
+	padding-right: 10%;
+}
+
+h1 > *{
+	background: -webkit-linear-gradient(0deg, $gradientPink 0%, $gradientYellow 100%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+	font-size: 8rem;
+	font-weight: 900;
+	margin: 0;
+}
+
+.firstName {
+	position: relative;
+}
+
+.lastName {
+	display: inline-block;
+	float: right;
+}
+
+.firstName:before,
+.firstName:after {
+	border-radius: 50% 50% 50% 0;
+	display: block;
+	background: $mainfont;
+	color: $secondary;
+	font-size: 2rem;
+	font-weight: 600;
+	position: absolute;
+	-webkit-text-fill-color: $secondary;
+}
+
+.firstName:before {
+	content: "Hello";
+	padding: 30px 15px;
+	right: -10%;
+    top: -60%;	
+}
+
+.firstName:after {
+	border: 2px solid white;
+	content: "I am";
+	font-size: 2rem;
+	padding: 20px 10px;
+	right: -20%;
+    top: -5%;
+}
+
+header .right,
+.banner .right {
+	padding-left: 10%;
+}
+
+.social {
+	display: flex;
+	justify-content: center;
+	font-size: 1.4rem;
+}
+
+.social a {
+	align-items: center;
+	background: $secondary;
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	margin: 1px;
+	width: 50px;
+}
+
+.social a:hover {
+	background: linear-gradient(to right, $gradientPink 0%, $gradientYellow 100%);
+	border-radius: 2px;
+	color: $secondary;
+}
+
+/* Halo effect around photo */
+
+.halo {
+	border-radius: 50%;
+	box-shadow: 0px 0px 40px 0px rgba(138, 138, 138, 0.1);
+	position: absolute;
+}
+
+.halo.one {
+	background: $secondary;
+    top: -2%;
+    left: -2%;
+    width: 90%;
+    height: 90%;
+}
+
+.halo.two {
+	width: 110%;
+    height: 110%;
+    left: -12%;
+    top: -12%;
+}
+
+.halo.three {
+	width: 140%;
+    height: 140%;
+    top: -27%;
+    left: -27%;
+}
+
+/* Section end scallops */
+
+header .banner::after { 
+	@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
+}
+
+// ABOUT SECTION STYLES
+
+.about {
+    background: $secondary;
+    z-index: 5;
+    position: relative;
+}
+
+.about h2 {
+	position: absolute;
+	top: 5%;
+    left: 32%;
+    line-height: 1;
+}
+
+.about h3 {
+	margin: 0;
+}
+
+.about .right h3 {
+	text-align: left;
+}
+
+.about h4 {
+	font-size: 1.6rem;
+	font-weight: 400;
+	margin: 10px;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.about .right h4 {
+	text-align: right;
+}
+
+.about .nameCard {
+	margin: 0;
+	width: 80%;
+}
+
+.about .right p {
+	line-height: 1.5;
+	text-align: justify;
+}
+
+.nameCard figcaption {
+	box-shadow: -21px 22px 30px 0px rgba(176, 176, 176, 0.1);
+	padding: 40px;
+}
+
+.about .nameCard p {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.nameCard a {
+	padding: 0 5px;
+}
+
+.about .right {
+	padding-top: 100px;
+}
+
+.about .button {
+	@include button(5% 15%, 40px auto 0);
+}
+
+.about .button.responsive {
+	display: none;
+}
+
+.about .button:hover {
+    background: linear-gradient(to left, #f40e67 0%, #fccd11 100%);
+}
+
+// .progressBackground {
+// 	width: 100%;
+//     height: 10px;
+//     background: #dddddd;
+//     border-radius: 50px;
+//     position: relative;
+// }
+
+// .progressBackground:before {
+//    	content: "";
+//     display: block;
+//     position: absolute;
+//     left: -.5%;
+//     top: -30%;
+//     padding: 2px;
+//     width: inherit;
+//     height: inherit;
+//     border: 1px solid #eee;
+//     border-radius: inherit;
+//     }
+
+// .progressBar {
+// 	background: linear-gradient(to left, #f40e67 0%, #fccd11 100%);
+// 	height: 100%;
+// 	border-radius: inherit;
+// }
+
+
+// .progressBar.full {
+// 	width: 90%;
+// 	transition: width 0.5s;
+// }
+
+// .progressBar.empty {
+// 	width: 10%;
+// 	transition: width 2s;
+// }
+
+// .progressBar.filled {
+// 	width: 100%;
+// }
+
+// .skillbox {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	justify-content: center;
+// 	box-shadow: 21px 22px 30px 0px rgba(176, 176, 176, 0.1);
+// 	figure {
+// 		font-size: 6rem;
+// 		display: flex;
+//     	flex-direction: column;
+//     	margin: 30px;
+//     	align-items: center;
+//     	justify-content: space-between;
+// 	}
+// 	figcaption {
+// 		font-size: 1.4rem;
+// 		font-weight: 600;
+// 		margin: 5px auto;
+// 	}
+// }
+
+h4.skills {
+	margin: 10px 0;
+}
+.resume {
+	background: #f9f9ff ;
+}
+
+.about::after { 
+	@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, #f9f9ff 30%), -25px);
+}
+
+.banner.bottom {
+	background: linear-gradient(to right, #f40e67 0%, #fccd11 100%);
+	position: relative;
+	padding-top: 0;
+	padding-bottom: 0;
+	.left {
+		padding: 10% 0;
+	}
+	.button {
+		background:  #ffffff;
+    	border-radius: 40px;
+		box-shadow: -14px 14px 20px 0px rgba(98, 98, 98, 0.2);
+		padding: 1% 5%;
+		font-size: 1.4rem;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	p {
+		color: $secondary;
+		font-size: 4rem;
+		font-weight: 900;
+		margin-top: 0;
+	}
+	img {
+		position: absolute;
+    	bottom: 4%;
+    	right: 0;
+    	width: 50%;
+    	z-index: 15;
+	}
+}
+
+.bottom .button:hover {
+	box-shadow: -6px 6px 5px 0px rgba(98, 98, 98, 0.2);
+}
+
+.bottom .wrapper {
+	position: relative;
+}
+
+.skills {
+	background: linear-gradient(to bottom, #f9f9ff 5%, #fff 10%);
+}
+
+// PROJECT SECTION STYLES
+.project {
+	background: $lightBlue;
+	display: flex;
+	margin: 0 0 12% 0;
+	&.left, 
+	&.right {
+		float: none;
+	}
+}
+
+.projects {	
+	position: relative;
+	padding-bottom: 200px;
+	.column {
+		display: flex;
+    	align-items: center;
+    	flex-wrap: wrap;
+    	justify-content: center;
+	}
+	h2 {
+		margin: 0;
+		width: 100%;
+	}
+	h4 {
+		font-weight: 400;
+		font-size: 1.8rem;
+	}
+}
+
+.box {
+  	position: relative;
+  	width: calc(50vw / 2);
+  	height: calc(50vw / 2);
+  	max-width: 390px;
+  	max-height: 390px;
+  	display: flex;
+  	align-items: center;
+   	justify-content: center;
+   	text-align: center;
+   	.outside {
+   		position: absolute;
+   		width: 120%;
+		height: 120%;
+		left: -10%;
+		top: -10%;
+		border: 4px dashed $accent;
+		transform: rotate(45deg);
+   	}
+   	h3 {
+   		font-size: calc(18px + (28 - 18) * ((100vw - 768px) / (1600 - 768)));
+   	}
+   	p {
+   		font-size: calc(14px + (22 - 14) * ((100vw - 768px) / (1600 - 768)));
+   	}
+   	&:after {
+		content: "";
+  		display: block;
+  		background: #f9f9ff;
+  		position: absolute;
+  		box-shadow: 0px 0px 20px 0px rgba(176, 176, 176, 0.2); 
+  		top: 0;
+  		bottom: 0;
+  		left: 0;
+  		right: 0;
+  		transform: rotate(45deg);
+   	}
+   	&.two {
+   		margin-left: 10%;
+   	}
+   	&.one, 
+   	&.three {
+		margin-right: 10%;
+   	}
+}
+
+.projects .button {
+	@include button(2px 2px, 25% auto 0);
+	// width: 100%;
+	// bottom: -10%;
+	// left: 0;
+	text-transform: capitalize;
+	// position: absolute;
+	box-shadow: 5px 5px 10px 0px rgba(176, 176, 176, 0.2); 
+	z-index: 10;
+
+	a {
+		border-radius: 40px;
+		display: block;
+		font-size: calc(12px + (18 - 12) * ((100vw - 768px) / (1600 - 768)));
+		padding: calc(12px + (18 - 12) * ((100vw - 768px) / (1600 - 768)));
+		width: 100%;
+		background: $secondary;	
+		&:hover {
+			background: transparent;
+			color: $secondary;
+		}
+	}
+}
+
+// Border for diamond shapes
+
+.corner {
+	width: 20%;
+	height: 20%;
+	position: absolute;
+	&.one {
+		border-top: 4px solid $accent;
+		border-left: 4px solid $accent;
+		left: -4px;
+		top: -4px;
+	}
+	&.two {
+		border-top: 4px solid $accent;
+		border-right: 4px solid $accent;
+		right: -4px;
+		top:-4px;
+	}
+	&.three {
+		border-bottom: 4px solid $accent;
+		border-left: 4px solid $accent;
+		bottom: -4px;
+		left: -4px;
+	}
+	&.four {
+		border-bottom: 4px solid $accent;
+		border-right: 4px solid $accent;
+		bottom: -4px;
+		right: -4px;
+	}
+}
+
+.textContainer {
+	bottom: -5%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 10;
+	> * {
+		margin-top: calc(10px + (16 - 10) * ((100vw - 768px) / (1600 - 768)));
+		margin-bottom: 0;
+	}
+}
+
+
+.projects::after {
+	@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), -35px);
+	transform: rotate(180deg);
+}
+
+
+
+main .banner::after {
+	@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
+	z-index: 15;
+}
+
+// CONTACT STYLES
+
+.contact {
+	padding-top: 50px;
+	h2 {
+		text-align: center;
+		width: 100%;
+		margin-top: 0;
+	}
+	input,
+	textarea {
+		background: #f9f9ff;
+		border: 2px solid $accent;
+		padding: 15px;
+		margin: 5px;
+	}
+}
+
+.formContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.columnContainer {
+	display: flex;
+	flex-basis: 245px;
+	flex-direction: column;
+	flex-grow: 1;
+	width: 40%;
+}
+
+.messageContainer {
+	flex-grow: 1;
+	width: 60%;
+}
+
+input[type="submit"] {
+	box-shadow: -14px 14px 20px 0px rgba(176, 176, 176, 0.5);
+	@include button(15px 60px, 40px auto 0);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to left, $gradientPink 0%, $gradientYellow 100%);
+    box-shadow: -6px 6px 5px 0px rgba(98, 98, 98, 0.2);
+}
+
+// FOOTER STYLES
+footer {
+	font-size: 1.4rem;
+	text-align: center;
+	a {
+		color: $gradientPink;
+	}
+}
+
+// RESPONSIVE STYLES
+
+// Small Laptop to Portrait tablet
+
+@media (max-width: 940px) {
+	h1 {
+		padding: 0;
+	}
+
+	.lastName {
+		float: left;
+	}
+
+	header h3 {
+		text-align: left;
+	}
+
+	header .social {
+		justify-content: flex-start;
+	}
+}
+
+// Portrait tablet to landscape phone
+@media (max-width: 768px) { 
+	h2 {
+		font-size: 4rem;
+	}
+
+	section {
+		padding-top: 50px;
+	}
+
+	.logo {
+		display: none;
+	}
+	
+	.navigation .wrapper {
+		justify-content: center;
+	}
+
+	.navigation nav {
+		margin: 10px 0;
+	}
+	.banner .right {
+		display: none;
+	}
+
+	.banner .left {
+		text-align: center;
+		width: 100%;
+	}
+
+	h1,
+	header h3 {
+		text-align: center;
+	}
+
+	header .social {
+		justify-content: center;
+	}
+
+	.lastName {
+		float: none;
+	}
+
+	 // About section
+	 .about .column {
+	 	width: 100%;
+	 }
+
+	 .about .left {
+	 	align-items: flex-start;
+	 	display: flex;
+	 	justify-content: space-between;
+	 }
+
+	 .about .right {
+		padding: 0;
+	 }
+
+	 .about h2 {
+	 	margin: 20px 20px 20px 0;
+	 	position: static;
+	 	width: 100%;
+	 }
+
+	 .about h3 {
+	 	margin-top: 30px;
+	 }
+
+	 .nameCard {
+	 	width: 100%;
+	 }
+
+	 .nameCard figcaption {
+	 	display: none;
+	 }
+
+	 .about .button.responsive {
+	 	display: block;
+	 }
+
+	 // Projects section 
+	 .projects {
+	 	padding-bottom: 150px;
+	 }
+
+	 .projects h2 {
+	 	text-align: center;
+	 }
+
+	 .project {
+	 	flex-wrap: wrap;
+	 }
+
+	 .projects .column {
+	 	flex-basis: 350px;
+	 	flex-grow: 1;
+	 	padding: 50px 0 0 0;
+	 	width: 100%;
+	 }
+
+	 .projects .box {
+	 	margin: 0;
+	 }
+
+	.two .left {
+		order:1;
+	}
+
+	.box {
+		width: calc(100vw / 2);
+		height: calc(100vw / 2);
+		h3 {
+			font-size: calc(16px + (28 - 16) * ((100vw - 350px) / (768 - 350)));
+		}
+		p {
+			font-size: calc(14px + (22 - 14) * ((100vw - 350px) / (768 - 350)));
+		}
+	}
+
+	.box .button {
+		a {
+			font-size: calc(12px + (18 - 12) * ((100vw - 350px) / (768 - 350)));
+			padding: calc(8px + (18 - 8) * ((100vw - 350px) / (768 - 350)));
+		}
+	}
+
+	// Bottom banner 
+	.banner.bottom .left {
+		padding: 100px 0;
+	}
+}
+
+// Landscape phone and down
+@media (max-width: 480px) {
+	header .firstName,
+	header .lastName {
+		font-size: 6rem;
+	}
+
+	header .left {
+		align-items: flex-end;
+		padding-bottom: 30%;
+	}
+
+	.about h2 {
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	.firstName:before {
+		right: 35%;
+    	top: -155%;
+	}
+
+	.firstName:after {
+		right: 25%;
+    	top: -75%;
+	}
+
+	.about .left {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.about  h2 {
+		text-align: center;
+	}
+
+	.skillbox {
+		flex-direction: column;
+	}
+
+	// Projects section
+	.projects {
+	 	padding-bottom: 100px;
+	 }
+
+	.projects .button {
+		margin-top: 5%;
+	}
+
+	.projects a {
+		padding: 5px 2px;
+	}
+}
