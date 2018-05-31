@@ -174,6 +174,7 @@
 		<section class="skills" id="skills">
 			<div class="wrapper clearfix">
 				<h2>My Skills</h2>
+				<div class="skills-container">
 						<div class="box one">
 							<div class="outside">
 								<div class="corner one"></div>
@@ -186,7 +187,6 @@
 								<h3>Skills</h3>
 								<p>HTML5</p>
 								<p>CSS3</p>
-								<p>Sass</p>
 								<p>JavaScript</p>
 								<p>jQuery</p>
 								<p>React</p>
@@ -208,6 +208,7 @@
 								<p>Git / GitHub</p>
 								<p>Command Line</p>
 								<p>VS Code</p>
+								<p>Firebase</p>
 							</div>
 							<!-- /.textContainer -->
 						</div>
@@ -222,14 +223,17 @@
 							<!-- /.outside -->
 							<div class="textContainer">
 								<h3>More</h3>
+								<p>Sass</p>
 								<p>Responsive</p>
 								<p>CSS Grid</p>
 								<p>CSS Animation</p>
-								<p>Firebase</p>
+								<p>WordPress</p>
+								<p>BEM</p>
 							</div>
 							<!-- /.textContainer -->
 						</div>
 						<!-- /.box.three -->
+				</div> <!-- /.skills-container-->
 			</div>
 			<!-- /.wrapper -->
 		</section>
@@ -242,12 +246,13 @@
 				</div>
 				<div class="project one clearfix">
 					<div class="column left">
-						<img src="public/assets/comic-quiz-result.png" alt="">
+						<img src="public/assets/comicquiz-mockup.png" alt="">
 					</div>
 					<!-- /.column.left -->
 					<div class="column right">
 							<div class="textContainer">
-								<h3>Interactive Quiz</h3>
+								<h4>Get Hooked on Comics</h4>
+								<h3>Interactive jQuery Quiz</h3>
 								<p>Find out which comic you should read with this interactive web application.</p>
 								<p>JavaScript / jQuery / Sass</p>
 							</div>
@@ -266,6 +271,7 @@
 				<div class="project two clearfix">
 					<div class="column left">
 							<div class="textContainer">
+								<h4>Lisbon</h4>
 								<h3>PSD to HTML</h3>
 								<p>Single page website replicated from PSD design. Pixel perfect and fully responsive.</p>
 								<p>HTML / Sass / Responsive Design</p>
@@ -281,21 +287,22 @@
 					</div>
 					<!-- /.column.left -->
 					<div class="column right">
-						<img src="public/assets/lisbon.png" alt="a preview of a conference webpage">
+						<img src="public/assets/lisbon-mockup.png" alt="a preview of a conference webpage">
 					</div>
 					<!-- /.column.right -->
 				</div>
 				<!-- /.project.two -->
 				<div class="project three clearfix">
 					<div class="column left">
-						<video src="public/assets/css_pug_headtilt.mp4" autoplay loop>
-							Your browser does not support the video element.
-						</video>
+						<a href="https://codepen.io/megster/">
+							<img src="public/assets/codepen-mockup.png">
+						</a>
 					</div>
 					<!-- /.column.left -->
 					<div class="column right">
 							<div class="textContainer">
-								<h3>Code Play!</h3>
+								<h4>Code Play!</h4>
+								<h3>Code Pen Experiments</h3>
 								<p>I love to play with CSS, experiment with animations, and learn new skills! Some of my CodePens include a Comic Book inspired gallery layout using CSS Grid, an animated SVG quote, and a pure CSS pug!</p>
 							</div>
 							<!-- /.textContainer -->
@@ -343,7 +350,7 @@
 						</div>
 						<div class="messageContainer">
 							<label for="message" class="visuallyhidden">Enter messages</label>
-							<textarea name="message" id="message" placeholder="Enter messages"></textarea>
+							<textarea name="message" id="message" placeholder="Enter message"></textarea>
 						</div>
 					</div>
 					<input type="submit" value="Send message">

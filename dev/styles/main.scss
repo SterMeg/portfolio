@@ -443,7 +443,20 @@ h4.skills {
 }
 
 .skills {
-	background: linear-gradient(to bottom, #f9f9ff 5%, #fff 10%);
+	background: linear-gradient(to bottom, #f9f9ff 5%, #fff 10%, $secondary 90%, $lightBlue 95%);
+	position: relative;
+	padding-bottom: 150px;
+	&:after {
+		@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
+	}
+}
+
+.skills-container {
+	display: flex;
+	justify-content: space-between;
+	@media (max-width: 480px) {
+		flex-direction: column;
+	}
 }
 
 // PROJECT SECTION STYLES
@@ -478,52 +491,65 @@ h4.skills {
 
 .box {
   	position: relative;
-  	width: calc(50vw / 2);
-  	height: calc(50vw / 2);
-  	max-width: 390px;
-  	max-height: 390px;
+	width: calc((100% / 3) - 40px);
+	padding: 20px;
+  	// height: calc((100vw / 3) - 20px);
+    // max-width: calc((900px / 3) - 20px);
+    // max-height: calc((900px / 3) - 20px);
   	display: flex;
   	align-items: center;
    	justify-content: center;
-   	text-align: center;
+	text-align: center;
+	background: $secondary;
+	box-shadow: 0px 0px 20px 0px rgba(176, 176, 176, 0.2);
+	@media (max-width: 480px) {
+		width: 100%;
+		margin-bottom: 20px;
+	}
    	.outside {
-   		position: absolute;
-   		width: 120%;
-		height: 120%;
-		left: -10%;
-		top: -10%;
-		border: 4px dashed $accent;
-		transform: rotate(45deg);
+		position: absolute;
+   		width: calc(100% + 50px);
+		height: calc(100% + 50px);
+		left: -25px;
+		top: -25px;
+		border: 4px dashed $lightBlue;
+		// transform: rotate(45deg);
+		@media (max-width: 480px) {
+			border-bottom: none;
+			border-top: none;
+		}
    	}
    	h3 {
-   		font-size: calc(18px + (28 - 18) * ((100vw - 768px) / (1600 - 768)));
+		font-size: 18px;
+   		// font-size: calc(18px + (28 - 18) * ((100vw - 768px) / (1600 - 768)));
    	}
    	p {
-   		font-size: calc(14px + (22 - 14) * ((100vw - 768px) / (1600 - 768)));
+		font-size: 16px;
+   		// font-size: calc(14px + (22 - 14) * ((100vw - 768px) / (1600 - 768)));
    	}
-   	&:after {
-		content: "";
-  		display: block;
-  		background: #f9f9ff;
-  		position: absolute;
-  		box-shadow: 0px 0px 20px 0px rgba(176, 176, 176, 0.2); 
-  		top: 0;
-  		bottom: 0;
-  		left: 0;
-  		right: 0;
-  		transform: rotate(45deg);
-   	}
-   	&.two {
-   		margin-left: 10%;
-   	}
-   	&.one, 
-   	&.three {
-		margin-right: 10%;
-   	}
+   	// &:after {
+	// 	content: "";
+  	// 	display: block;
+  	// 	background: $lightBlue;
+  	// 	position: absolute;
+  	// 	box-shadow: 0px 0px 20px 0px rgba(176, 176, 176, 0.2); 
+  	// 	top: 0;
+  	// 	bottom: 0;
+  	// 	left: 0;
+  	// 	right: 0;
+  		// transform: rotate(45deg);
+   	// }
+   	// &.two {
+   	// 	margin-left: 10%;
+   	// }
+   	// &.one, 
+   	// &.three {
+	// 	margin-right: 10%;
+   	// }
 }
 
 .projects .button {
-	@include button(2px 2px, 25% auto 0);
+	@include button(2px 2px, 20px 10px 0);
 	// width: 100%;
 	// bottom: -10%;
 	// left: 0;
@@ -553,26 +579,32 @@ h4.skills {
 	height: 20%;
 	position: absolute;
 	&.one {
-		border-top: 4px solid $accent;
-		border-left: 4px solid $accent;
+		border-top: 4px solid $lightBlue;
+		border-left: 4px solid $lightBlue;
 		left: -4px;
 		top: -4px;
 	}
 	&.two {
-		border-top: 4px solid $accent;
-		border-right: 4px solid $accent;
+		border-top: 4px solid $lightBlue;
+		border-right: 4px solid $lightBlue;
 		right: -4px;
 		top:-4px;
+		@media (max-width: 480px) {
+			border-top: none;
+		}
 	}
 	&.three {
-		border-bottom: 4px solid $accent;
-		border-left: 4px solid $accent;
+		border-bottom: 4px solid $lightBlue;
+		border-left: 4px solid $lightBlue;
 		bottom: -4px;
 		left: -4px;
+		@media (max-width: 480px) {
+			border-bottom: none;
+		}
 	}
 	&.four {
-		border-bottom: 4px solid $accent;
-		border-right: 4px solid $accent;
+		border-bottom: 4px solid $lightBlue;
+		border-right: 4px solid $lightBlue;
 		bottom: -4px;
 		right: -4px;
 	}
@@ -615,7 +647,8 @@ main .banner::after {
 	input,
 	textarea {
 		background: #f9f9ff;
-		border: 2px solid $accent;
+		border: none;
+		// border: 2px solid $accent;
 		padding: 15px;
 		margin: 5px;
 	}
@@ -788,16 +821,16 @@ footer {
 		order:1;
 	}
 
-	.box {
-		width: calc(100vw / 2);
-		height: calc(100vw / 2);
-		h3 {
-			font-size: calc(16px + (28 - 16) * ((100vw - 350px) / (768 - 350)));
-		}
-		p {
-			font-size: calc(14px + (22 - 14) * ((100vw - 350px) / (768 - 350)));
-		}
-	}
+	// .box {
+	// 	width: calc(100vw / 2);
+	// 	height: calc(100vw / 2);
+	// 	h3 {
+	// 		font-size: calc(16px + (28 - 16) * ((100vw - 350px) / (768 - 350)));
+	// 	}
+	// 	p {
+	// 		font-size: calc(14px + (22 - 14) * ((100vw - 350px) / (768 - 350)));
+	// 	}
+	// }
 
 	.box .button {
 		a {
