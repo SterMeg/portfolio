@@ -32,7 +32,7 @@ video {
 }
 
 h2 {
-	font-size: 6rem;
+	font-size: 7.2rem;
 	font-weight: 900;
 	text-transform: capitalize;
 	width: 30%;
@@ -52,8 +52,11 @@ section {
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 1080px;
-	width: 80%;
+	max-width: 1140px;
+	@media (max-width: 1200px) {
+		padding: 0 40px;
+	}
+	// width: 80%;
 }
 
 textarea {
@@ -74,9 +77,21 @@ textarea {
   -webkit-text-fill-color: transparent;
 }
 
+.navigation-copy {
+	position:fixed;
+	background: $secondary;
+	width: 100%;
+	z-index: 20;
+	transition: background 2s;
+	transition-delay: 0.5s;	
+}
+
+.navigation-copy.scroll {
+		background: rgba(255,255,255, 0.9);
+	}
+
 .navigation {
-	position:relative;
-  	background: $secondary;
+	position: relative;
 	.wrapper {
 		align-items: center;
 		display: flex;
@@ -93,8 +108,26 @@ textarea {
 	color: $secondary;
 }
 
-.navigation::after { 
-	@include scallops(radial-gradient(circle at 50% 0%, white 25%, rgba(0,0,0,.1) 26%, transparent 30%), -40px);
+// .navigation--scroll {
+// 	position:fixed;
+// 	background: $secondary;
+// 	width: 100%;
+// 	z-index: 20;
+// }
+
+.navigation:after { 
+	@include scallops(radial-gradient(circle at 50% 0%, white 25%, rgba(0,0,0,.1) 26%, transparent 30%), -100px);
+	transition-delay: 0.5s;
+	transition: opacity .2s;
+}
+
+.navigation.scroll {
+	background: rgba(255,255,255, 0.8);
+}
+
+.navigation.scroll:after {
+	// transform: translateY(-10px);
+	opacity: 0;
 }
 
 .menu  {
@@ -108,7 +141,7 @@ textarea {
 
 header .banner {
 	background: linear-gradient(to bottom, rgba(249, 249, 255, .8)),url(../assets/light_grey.png);
-	height: 90vh;
+	height: 100vh;
 	position: relative;
 }
 
@@ -122,7 +155,7 @@ header .banner {
 }
 
 .right {
-	float: right;
+	float: left;
 	align-items: flex-end;
 	justify-content: center;
 }
@@ -258,14 +291,23 @@ header .banner::after {
 
 .about {
     background: $secondary;
-    z-index: 5;
-    position: relative;
+	z-index: 5;
+	padding-bottom: 150px;
+	position: relative;
+	.wrapper {
+		position: relative;
+	}
+	.right {
+		padding-left: 130px;
+		width: 60%;
+	}
 }
 
 .about h2 {
+	margin: 0;
 	position: absolute;
-	top: 5%;
-    left: 32%;
+	top: -72px;
+    left: 34%;
     line-height: 1;
 }
 
@@ -291,7 +333,8 @@ header .banner::after {
 
 .about .nameCard {
 	margin: 0;
-	width: 80%;
+	width: 40%;
+	float: left;
 }
 
 .about .right p {
@@ -463,7 +506,8 @@ h4.skills {
 .project {
 	background: $lightBlue;
 	display: flex;
-	margin: 0 0 12% 0;
+	margin: 0 0 30px 0;
+	padding: 40px 20px;
 	&.left, 
 	&.right {
 		float: none;
@@ -484,8 +528,10 @@ h4.skills {
 		width: 100%;
 	}
 	h4 {
+		color: $gradientYellow;
 		font-weight: 400;
-		font-size: 1.8rem;
+		font-size: 1.4rem;
+		text-transform: uppercase;
 	}
 }
 
@@ -555,14 +601,14 @@ h4.skills {
 	// left: 0;
 	text-transform: capitalize;
 	// position: absolute;
-	box-shadow: 5px 5px 10px 0px rgba(176, 176, 176, 0.2); 
+	box-shadow: -21px 22px 30px 0px rgba(176, 176, 176, 0.5);
 	z-index: 10;
 
 	a {
 		border-radius: 40px;
 		display: block;
-		font-size: calc(12px + (18 - 12) * ((100vw - 768px) / (1600 - 768)));
-		padding: calc(12px + (18 - 12) * ((100vw - 768px) / (1600 - 768)));
+		font-size: 1.4rem;
+		padding: 18px 54px;
 		width: 100%;
 		background: $secondary;	
 		&:hover {
