@@ -1,17 +1,11 @@
 @import 'setup';
 @import 'utils';
+@import 'typography';
+@import 'header';
+@import 'skills';
 
 
 /* GENERAL STYLES */
-
-html {
-	font-size: 62.5%;
-}
-
-body {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1.6rem;
-}
 
 ul {
 	margin: 0;
@@ -31,23 +25,8 @@ video {
 	max-width: 100%;
 }
 
-h2 {
-	font-size: 7.2rem;
-	font-weight: 900;
-	text-transform: capitalize;
-	width: 30%;
-}
-
-h3 {
-	font-size: 2rem;
-	font-weight: 700;
-	text-align: center;
-	text-transform: uppercase;
-}
-
 section {
-	padding-top: 150px;
-	padding-bottom: 40px;
+	padding: 100px 0;
 }
 
 .wrapper {
@@ -108,13 +87,6 @@ textarea {
 	color: $secondary;
 }
 
-// .navigation--scroll {
-// 	position:fixed;
-// 	background: $secondary;
-// 	width: 100%;
-// 	z-index: 20;
-// }
-
 .navigation:after { 
 	@include scallops(radial-gradient(circle at 50% 0%, white 25%, rgba(0,0,0,.1) 26%, transparent 30%), -100px);
 	transition-delay: 0.5s;
@@ -126,7 +98,6 @@ textarea {
 }
 
 .navigation.scroll:after {
-	// transform: translateY(-10px);
 	opacity: 0;
 }
 
@@ -192,7 +163,7 @@ h1 > *{
 }
 
 .lastName {
-	display: inline-block;
+	// display: inline-block;
 	float: right;
 }
 
@@ -224,9 +195,9 @@ h1 > *{
     top: -5%;
 }
 
-header .right,
-.banner .right {
-	padding-left: 10%;
+header .right {
+	padding: 0 8%;
+	position: relative;
 }
 
 .social {
@@ -292,7 +263,7 @@ header .banner::after {
 .about {
     background: $secondary;
 	z-index: 5;
-	padding-bottom: 150px;
+	padding: 150px 0;
 	position: relative;
 	.wrapper {
 		position: relative;
@@ -300,6 +271,15 @@ header .banner::after {
 	.right {
 		padding-left: 130px;
 		width: 60%;
+	}
+	&__email-link {
+		margin: 20px 0 0 0;
+		&:hover {
+			color: $gradientYellow;
+		}
+	}
+	&__email-icon {
+		margin: 0 8px;
 	}
 }
 
@@ -331,7 +311,7 @@ header .banner::after {
 	text-align: right;
 }
 
-.about .nameCard {
+.about .name-card {
 	margin: 0;
 	width: 40%;
 	float: left;
@@ -342,26 +322,30 @@ header .banner::after {
 	text-align: justify;
 }
 
-.nameCard figcaption {
+.name-card figcaption {
 	box-shadow: -21px 22px 30px 0px rgba(176, 176, 176, 0.1);
 	padding: 40px;
 }
 
-.about .nameCard p {
+.about .name-card p {
 	text-align: center;
-	margin-top: 30px;
+	margin: 10px 0;
 }
 
-.nameCard a {
-	padding: 0 5px;
-}
+// .name-card .type-it {
+// 	text-align: center;
+// }
+
+// .name-card a {
+// 	padding: 0 5px;
+// }
 
 .about .right {
 	padding-top: 100px;
 }
 
 .about .button {
-	@include button(5% 15%, 40px auto 0);
+	@include button(15px 50px, 40px auto 0);
 }
 
 .about .button.responsive {
@@ -370,75 +354,6 @@ header .banner::after {
 
 .about .button:hover {
     background: linear-gradient(to left, #f40e67 0%, #fccd11 100%);
-}
-
-// .progressBackground {
-// 	width: 100%;
-//     height: 10px;
-//     background: #dddddd;
-//     border-radius: 50px;
-//     position: relative;
-// }
-
-// .progressBackground:before {
-//    	content: "";
-//     display: block;
-//     position: absolute;
-//     left: -.5%;
-//     top: -30%;
-//     padding: 2px;
-//     width: inherit;
-//     height: inherit;
-//     border: 1px solid #eee;
-//     border-radius: inherit;
-//     }
-
-// .progressBar {
-// 	background: linear-gradient(to left, #f40e67 0%, #fccd11 100%);
-// 	height: 100%;
-// 	border-radius: inherit;
-// }
-
-
-// .progressBar.full {
-// 	width: 90%;
-// 	transition: width 0.5s;
-// }
-
-// .progressBar.empty {
-// 	width: 10%;
-// 	transition: width 2s;
-// }
-
-// .progressBar.filled {
-// 	width: 100%;
-// }
-
-// .skillbox {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	justify-content: center;
-// 	box-shadow: 21px 22px 30px 0px rgba(176, 176, 176, 0.1);
-// 	figure {
-// 		font-size: 6rem;
-// 		display: flex;
-//     	flex-direction: column;
-//     	margin: 30px;
-//     	align-items: center;
-//     	justify-content: space-between;
-// 	}
-// 	figcaption {
-// 		font-size: 1.4rem;
-// 		font-weight: 600;
-// 		margin: 5px auto;
-// 	}
-// }
-
-h4.skills {
-	margin: 10px 0;
-}
-.resume {
-	background: #f9f9ff ;
 }
 
 .about::after { 
@@ -457,7 +372,7 @@ h4.skills {
 		background:  #ffffff;
     	border-radius: 40px;
 		box-shadow: -14px 14px 20px 0px rgba(98, 98, 98, 0.2);
-		padding: 1% 5%;
+		padding: 15px 50px;
 		font-size: 1.4rem;
 		font-weight: 600;
 		text-transform: uppercase;
@@ -485,33 +400,11 @@ h4.skills {
 	position: relative;
 }
 
-.skills {
-	background: linear-gradient(to bottom, #f9f9ff 5%, #fff 10%, $secondary 90%, $lightBlue 95%);
-	position: relative;
-	padding-bottom: 150px;
-	&:after {
-		@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
-	}
-}
-
-.skills-container {
-	display: flex;
-	justify-content: space-between;
-	@media (max-width: 480px) {
-		flex-direction: column;
-	}
-}
-
 // PROJECT SECTION STYLES
 .project {
 	background: $lightBlue;
 	display: flex;
 	margin: 0 0 30px 0;
-	padding: 40px 20px;
-	&.left, 
-	&.right {
-		float: none;
-	}
 }
 
 .projects {	
@@ -524,8 +417,8 @@ h4.skills {
     	justify-content: center;
 	}
 	h2 {
-		margin: 0;
-		width: 100%;
+		margin: 0 0 86px 0;
+		text-align: center;
 	}
 	h4 {
 		color: $gradientYellow;
@@ -534,73 +427,10 @@ h4.skills {
 		text-transform: uppercase;
 	}
 }
-
-.box {
-  	position: relative;
-	width: calc((100% / 3) - 40px);
-	padding: 20px;
-  	// height: calc((100vw / 3) - 20px);
-    // max-width: calc((900px / 3) - 20px);
-    // max-height: calc((900px / 3) - 20px);
-  	display: flex;
-  	align-items: center;
-   	justify-content: center;
-	text-align: center;
-	background: $secondary;
-	box-shadow: 0px 0px 20px 0px rgba(176, 176, 176, 0.2);
-	@media (max-width: 480px) {
-		width: 100%;
-		margin-bottom: 20px;
-	}
-   	.outside {
-		position: absolute;
-   		width: calc(100% + 50px);
-		height: calc(100% + 50px);
-		left: -25px;
-		top: -25px;
-		border: 4px dashed $lightBlue;
-		// transform: rotate(45deg);
-		@media (max-width: 480px) {
-			border-bottom: none;
-			border-top: none;
-		}
-   	}
-   	h3 {
-		font-size: 18px;
-   		// font-size: calc(18px + (28 - 18) * ((100vw - 768px) / (1600 - 768)));
-   	}
-   	p {
-		font-size: 16px;
-   		// font-size: calc(14px + (22 - 14) * ((100vw - 768px) / (1600 - 768)));
-   	}
-   	// &:after {
-	// 	content: "";
-  	// 	display: block;
-  	// 	background: $lightBlue;
-  	// 	position: absolute;
-  	// 	box-shadow: 0px 0px 20px 0px rgba(176, 176, 176, 0.2); 
-  	// 	top: 0;
-  	// 	bottom: 0;
-  	// 	left: 0;
-  	// 	right: 0;
-  		// transform: rotate(45deg);
-   	// }
-   	// &.two {
-   	// 	margin-left: 10%;
-   	// }
-   	// &.one, 
-   	// &.three {
-	// 	margin-right: 10%;
-   	// }
-}
-
+		
 .projects .button {
 	@include button(2px 2px, 20px 10px 0);
-	// width: 100%;
-	// bottom: -10%;
-	// left: 0;
 	text-transform: capitalize;
-	// position: absolute;
 	box-shadow: -21px 22px 30px 0px rgba(176, 176, 176, 0.5);
 	z-index: 10;
 
@@ -608,9 +438,10 @@ h4.skills {
 		border-radius: 40px;
 		display: block;
 		font-size: 1.4rem;
-		padding: 18px 54px;
+		padding: 18px 46px;
 		width: 100%;
 		background: $secondary;	
+		transition: all .2s ease-in;
 		&:hover {
 			background: transparent;
 			color: $secondary;
@@ -618,52 +449,13 @@ h4.skills {
 	}
 }
 
-// Border for diamond shapes
-
-.corner {
-	width: 20%;
-	height: 20%;
-	position: absolute;
-	&.one {
-		border-top: 4px solid $lightBlue;
-		border-left: 4px solid $lightBlue;
-		left: -4px;
-		top: -4px;
-	}
-	&.two {
-		border-top: 4px solid $lightBlue;
-		border-right: 4px solid $lightBlue;
-		right: -4px;
-		top:-4px;
-		@media (max-width: 480px) {
-			border-top: none;
-		}
-	}
-	&.three {
-		border-bottom: 4px solid $lightBlue;
-		border-left: 4px solid $lightBlue;
-		bottom: -4px;
-		left: -4px;
-		@media (max-width: 480px) {
-			border-bottom: none;
-		}
-	}
-	&.four {
-		border-bottom: 4px solid $lightBlue;
-		border-right: 4px solid $lightBlue;
-		bottom: -4px;
-		right: -4px;
-	}
-}
-
 .textContainer {
-	bottom: -5%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	z-index: 10;
+	align-items: flex-start;
+	padding-left: 50px;
 	> * {
-		margin-top: calc(10px + (16 - 10) * ((100vw - 768px) / (1600 - 768)));
+		margin-top: 10px;
 		margin-bottom: 0;
 	}
 }
@@ -688,7 +480,10 @@ main .banner::after {
 	h2 {
 		text-align: center;
 		width: 100%;
-		margin-top: 0;
+		margin: 0;
+	}
+	p {
+		text-align: center;
 	}
 	input,
 	textarea {
@@ -720,7 +515,7 @@ main .banner::after {
 
 input[type="submit"] {
 	box-shadow: -14px 14px 20px 0px rgba(176, 176, 176, 0.5);
-	@include button(15px 60px, 40px auto 0);
+	@include button(15px 49px, 40px auto 0);
 }
 
 input[type="submit"]:hover {
@@ -769,17 +564,17 @@ footer {
 		padding-top: 50px;
 	}
 
-	.logo {
-		display: none;
-	}
+	// .logo {
+	// 	display: none;
+	// }
 	
 	.navigation .wrapper {
 		justify-content: center;
 	}
 
-	.navigation nav {
-		margin: 10px 0;
-	}
+	// .navigation nav {
+	// 	margin: 10px 0;
+	// }
 	.banner .right {
 		display: none;
 	}
@@ -849,41 +644,18 @@ footer {
 	 }
 
 	 .project {
-	 	flex-wrap: wrap;
+		flex-wrap: wrap;		 
 	 }
 
 	 .projects .column {
 	 	flex-basis: 350px;
 	 	flex-grow: 1;
 	 	padding: 50px 0 0 0;
-	 	width: 100%;
-	 }
-
-	 .projects .box {
-	 	margin: 0;
-	 }
-
-	.two .left {
-		order:1;
-	}
-
-	// .box {
-	// 	width: calc(100vw / 2);
-	// 	height: calc(100vw / 2);
-	// 	h3 {
-	// 		font-size: calc(16px + (28 - 16) * ((100vw - 350px) / (768 - 350)));
-	// 	}
-	// 	p {
-	// 		font-size: calc(14px + (22 - 14) * ((100vw - 350px) / (768 - 350)));
-	// 	}
-	// }
-
-	.box .button {
-		a {
-			font-size: calc(12px + (18 - 12) * ((100vw - 350px) / (768 - 350)));
-			padding: calc(8px + (18 - 8) * ((100vw - 350px) / (768 - 350)));
+		width: 100%;
+		&--responsive-order {
+			order: -1;
 		}
-	}
+	 }
 
 	// Bottom banner 
 	.banner.bottom .left {
@@ -933,7 +705,7 @@ footer {
 
 	// Projects section
 	.projects {
-	 	padding-bottom: 100px;
+	 	padding: 100px 0;
 	 }
 
 	.projects .button {

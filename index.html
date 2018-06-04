@@ -28,6 +28,9 @@
 							<a href="#about">About</a>
 						</li>
 						<li>
+							<a href="#skills">Skills</a>
+						</li>
+						<li>
 							<a href="#projects">Projects</a>
 						</li>
 						<li>
@@ -72,6 +75,14 @@
 				<!-- /.column left -->
 				<div class="column right">
 					<div class="headshot">
+						<div class="shapes-container">
+							<img src="public/assets/x-shape.png" alt="">
+							<img src="public/assets/diamond.png" alt="">
+							<img src="public/assets/hatch-circle.png" alt="">
+							<img src="public/assets/triangle.png" alt="">
+							<img src="public/assets/steps.png" alt="">
+							<img src="public/assets/filled-circle.png" alt="">
+						</div>
 						<div class="halo one"></div>
 						<div class="halo two"></div>
 						<div class="halo three"></div>
@@ -93,15 +104,12 @@
 			<div class="wrapper clearfix">
 				<!-- <div class="column left"> -->
 					<h2>About </br> Meghan</h2>
-					<figure class="nameCard">
+					<figure class="name-card">
 						<img src="public/assets/2012-12-10 HackerYou Web Dev-1065-about.jpg" alt="Photo of Meghan Sterling">
 						<figcaption>
 							<h3>Meghan Sterling</h3>
-							<span class="type-it"></span>
-							<p>
-								<i class="far fa-envelope"></i>
-								<a href="mailto:hi@meghansterling.ca">hi@meghansterling.ca</a>
-							</p>
+							<p class="type-it"></p>
+							<p><a class="about__email-link" href="mailto:hi@meghansterling.ca"><i class="about__email-icon far fa-envelope"></i>hi@meghansterling.ca</a></p>
 							<a href="#contact" class="button">Contact me</a>
 						</figcaption>
 					</figure>
@@ -170,19 +178,19 @@
 			<!-- /.wrapper -->
 		</section>
 		<!-- /.about -->
-		<section class="skills" id="skills">
-			<div class="wrapper clearfix">
-				<h2>My Skills</h2>
+		
+			<section class="skills" id="skills">
+				<div class="wrapper">
+				<h2>My </br> Skills</h2>
 				<div class="skills-container">
+					<div class="outside one">
 						<div class="box one">
-							<div class="outside">
-								<div class="corner one"></div>
-								<div class="corner two"></div>
-								<div class="corner three"></div>
-								<div class="corner four"></div>
-							</div>
+							<div class="corner one"></div>
+							<div class="corner two"></div>
+							<div class="corner three"></div>
+							<div class="corner four"></div>
 							<!-- /.box.one -->
-							<div class="textContainer">
+							<div class="text-container">
 								<h3>Skills</h3>
 								<p>HTML5</p>
 								<p>CSS3</p>
@@ -192,16 +200,16 @@
 							</div>
 							<!-- /.textContainer -->
 						</div>
-						<!-- /.box.one -->
+					</div>
+					<!-- /.box.one -->
+					<div class="outside two">
 						<div class="box two">
-							<div class="outside">
-								<div class="corner one"></div>
-								<div class="corner two"></div>
-								<div class="corner three"></div>
-								<div class="corner four"></div>
-							</div>
+							<div class="corner one"></div>
+							<div class="corner two"></div>
+							<div class="corner three"></div>
+							<div class="corner four"></div>
 							<!-- /.outside -->
-							<div class="textContainer">
+							<div class="text-container">
 								<h3>Tools</h3>
 								<p>Gulp</p>
 								<p>Git / GitHub</p>
@@ -212,15 +220,15 @@
 							<!-- /.textContainer -->
 						</div>
 						<!-- /.box.two -->
+					</div>
+					<div class="outside three">
 						<div class="box three">
-							<div class="outside">
-								<div class="corner one"></div>
-								<div class="corner two"></div>
-								<div class="corner three"></div>
-								<div class="corner four"></div>
-							</div>
+							<div class="corner one"></div>
+							<div class="corner two"></div>
+							<div class="corner three"></div>
+							<div class="corner four"></div>
 							<!-- /.outside -->
-							<div class="textContainer">
+							<div class="text-container">
 								<h3>More</h3>
 								<p>Sass</p>
 								<p>Responsive</p>
@@ -232,23 +240,23 @@
 							<!-- /.textContainer -->
 						</div>
 						<!-- /.box.three -->
-				</div> <!-- /.skills-container-->
-			</div>
-			<!-- /.wrapper -->
-		</section>
-		<!-- /.skills -->
+					</div>
+				</div>
+				<!-- /.skills-container-->
+				</div>
+				<!-- /.wrapper -->
+			</section>
+			<!-- /.skills -->
 
 		<section class="projects" id="projects">
 			<div class="wrapper clearfix">
-				<div class="column">
 					<h2>My Work</h2>
-				</div>
-				<div class="project one clearfix">
-					<div class="column left">
+				<div class="project">
+					<div class="column">
 						<img src="public/assets/superdadjokes-mockup.png" alt="">
 					</div>
-					<!-- /.column.left -->
-					<div class="column right">
+					<!-- /.column -->
+					<div class="column">
 						<div class="textContainer">
 							<h4>Superdad Jokes</h4>
 							<h3>Interactive Joke Card Generator</h3>
@@ -264,19 +272,19 @@
 						</div>
 						<!-- /.button -->
 					</div>
-					<!-- /.column.right -->
+					<!-- /.column -->
 				</div>
-				<div class="project one clearfix">
-					<div class="column left">
+				<div class="project">
+					<div class="column">
 						<div class="textContainer">
-							<h4>Get Hooked on Comics</h4>
-							<h3>Interactive jQuery Quiz</h3>
-							<p>Find out which comic you should read with this interactive web application.</p>
-							<p>JavaScript / jQuery / Sass</p>
+							<h4>Weekend Planner</h4>
+							<h3>Location and Weather Based Event Planning</h3>
+							<p>Making decisions about your life just too tough? Get off your couch with a great weekend activity! This weekend planner uses the Wunderground API and Google Places API to help you find things to do next weekend.</p>
+							<p>JavaScript / jQuery / API</p>
 						</div>
 						<!-- /.textContainer -->
 						<div class="button">
-							<a href="http://gethookedoncomics.com/">View Live</a>
+							<a href="https://meghansterling.ca/weekend-planner/">View Live</a>
 						</div>
 						<div class="button">
 							<a href="https://github.com/SterMeg/comicquiz">View on GitHub</a>
@@ -284,18 +292,18 @@
 						<!-- /.button -->
 						
 					</div>
-					<!-- /.column.left -->
-					<div class="column right">
-						<img src="public/assets/comicquiz-mockup.png" alt="">
+					<!-- /.column -->
+					<div class="column column--responsive-order">
+						<img src="public/assets/weekend-planner.png" alt="">
 					</div>
-					<!-- /.column.right -->					
+					<!-- /.column -->					
 				</div>
-				<div class="project one clearfix">
-					<div class="column left">
+				<div class="project">
+					<div class="column">
 						<img src="public/assets/comicquiz-mockup.png" alt="">
 					</div>
-					<!-- /.column.left -->
-					<div class="column right">
+					<!-- /.column -->
+					<div class="column">
 							<div class="textContainer">
 								<h4>Get Hooked on Comics</h4>
 								<h3>Interactive jQuery Quiz</h3>
@@ -311,14 +319,14 @@
 							</div>
 							<!-- /.button -->
 					</div>
-					<!-- /.column.right -->
+					<!-- /.column -->
 				</div>
 				<!-- /.project.one -->
-				<div class="project two clearfix">
-					<div class="column left">
+				<div class="project">
+					<div class="column">
 							<div class="textContainer">
 								<h4>Lisbon</h4>
-								<h3>PSD to HTML</h3>
+								<h3>PSD to HTML Conversion</h3>
 								<p>Single page website replicated from PSD design. Pixel perfect and fully responsive.</p>
 								<p>HTML / Sass / Responsive Design</p>
 							</div>
@@ -331,21 +339,23 @@
 							</div>
 							<!-- /.button -->
 					</div>
-					<!-- /.column.left -->
-					<div class="column right">
-						<img src="public/assets/lisbon-mockup.png" alt="a preview of a conference webpage">
+					<!-- /.column-->
+					<div class="column column--responsive-order">
+						<a href="/Lisbon">
+							<img src="public/assets/lisbon-mockup.png" alt="a preview of a conference webpage">
+						</a>
 					</div>
-					<!-- /.column.right -->
+					<!-- /.column -->
 				</div>
 				<!-- /.project.two -->
-				<div class="project three clearfix">
-					<div class="column left">
+				<div class="project">
+					<div class="column">
 						<a href="https://codepen.io/megster/">
 							<img src="public/assets/codepen-mockup.png">
 						</a>
 					</div>
-					<!-- /.column.left -->
-					<div class="column right">
+					<!-- /.column -->
+					<div class="column">
 							<div class="textContainer">
 								<h4>Code Play!</h4>
 								<h3>Code Pen Experiments</h3>
@@ -357,7 +367,7 @@
 							</div>
 							<!-- /.button -->
 					</div>
-					<!-- /.column.right -->
+					<!-- /.column -->
 				</div>
 				<!-- /.project.three -->
 			</div>
@@ -384,6 +394,11 @@
 		<section class="contact" id="contact">
 			<div class="wrapper">
 				<h2>Contact me</h2>
+				<p>
+					<a class="about__email-link" href="mailto:hi@meghansterling.ca">
+					<i class="about__email-icon far fa-envelope"></i>hi@meghansterling.ca</a>
+				</p>
+				<p>-OR-</p>
 				<form action="http://www.focuspocus.io/magic/sterling.meghan@gmail.com" method="POST">
 					<div class="formContainer">
 						<div class="columnContainer">
