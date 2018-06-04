@@ -1,3 +1,209 @@
+/* HEADER STYLES */
+
+/* Navigation styles */
+
+.logo p {
+    position: relative;
+	font-size: 2rem;
+	font-weight: 900;
+	 background: -webkit-linear-gradient(0deg, $gradientPink 0%, $gradientYellow 100%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    z-index: 10;
+}
+
+.navigation-copy {
+	position:fixed;
+	background: $secondary;
+	width: 100%;
+	z-index: 20;
+	transition: background 2s;
+	transition-delay: 0.5s;	
+}
+
+.navigation-copy.scroll {
+		background: rgba(255,255,255, 0.9);
+	}
+
+.navigation {
+	position: relative;
+	.wrapper {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		a {
+			padding: 10px;
+		}
+	}
+}
+
+.navigation a:hover {
+	background: linear-gradient(to right, $gradientPink 0%, $gradientYellow 100%);
+	border-radius: 2px;
+	color: $secondary;
+}
+
+.navigation:after { 
+	@include scallops(radial-gradient(circle at 50% 0%, white 25%, rgba(0,0,0,.1) 26%, transparent 30%), -100px);
+	transition-delay: 0.5s;
+	transition: opacity .2s;
+}
+
+.navigation.scroll {
+	background: rgba(255,255,255, 0.8);
+}
+
+.navigation.scroll:after {
+	opacity: 0;
+}
+
+.menu  {
+	display: flex;
+	font-size: 1.3rem;
+	font-weight: 700;
+    text-transform: uppercase;
+    @media (max-width: 500px) {
+        background: $secondary;
+        flex-direction: column;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        align-items: center;
+    }
+}
+
+.show-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.responsive-nav-icon {
+    display: none;
+    position: relative;
+    @media (max-width: 500px) {
+        display: block;
+    }
+}
+
+/* Banner styles */
+
+header .banner {
+	background: linear-gradient(to bottom, rgba(249, 249, 255, .8)),url(../assets/light_grey.png);
+	height: 100vh;
+	position: relative;
+}
+
+.column {
+	width: 50%;
+}
+
+.left {
+	float: left;
+	align-items: center;
+}
+
+.right {
+	float: left;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+header .left, 
+header .right {
+	display: flex;
+}
+
+.banner .wrapper, .left, .right  {
+	height: inherit;
+}
+
+.headshot,
+.headshot img {
+	position: relative;
+}
+
+h1 {
+	padding-right: 10%;
+}
+
+h1 > *{
+	background: -webkit-linear-gradient(0deg, $gradientPink 0%, $gradientYellow 100%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+	font-size: 8rem;
+	font-weight: 900;
+	margin: 0;
+}
+
+.firstName {
+	position: relative;
+}
+
+.lastName {
+	// display: inline-block;
+	float: right;
+}
+
+.firstName:before,
+.firstName:after {
+	border-radius: 50% 50% 50% 0;
+	display: block;
+	background: $mainfont;
+	color: $secondary;
+	font-size: 2rem;
+	font-weight: 600;
+	position: absolute;
+	-webkit-text-fill-color: $secondary;
+}
+
+.firstName:before {
+	content: "Hello";
+	padding: 30px 15px;
+	right: -10%;
+    top: -60%;	
+}
+
+.firstName:after {
+	border: 2px solid white;
+	content: "I am";
+	font-size: 2rem;
+	padding: 20px 10px;
+	right: -20%;
+    top: -5%;
+}
+
+header .right {
+	padding: 0 8%;
+	position: relative;
+}
+
+.social {
+	display: flex;
+	justify-content: center;
+	font-size: 1.4rem;
+}
+
+.social a {
+	align-items: center;
+	background: $secondary;
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	margin: 1px;
+	width: 50px;
+}
+
+.social a:hover {
+	background: linear-gradient(to right, $gradientPink 0%, $gradientYellow 100%);
+	border-radius: 2px;
+	color: $secondary;
+}
+
+// Shapes around photo
 .shapes-container {
     position: absolute;
     width: 100%;
@@ -6,3 +212,41 @@
         position: absolute;
     }
 }
+
+/* Halo effect around photo */
+
+.halo {
+	border-radius: 50%;
+	box-shadow: 0px 0px 40px 0px rgba(138, 138, 138, 0.1);
+	position: absolute;
+}
+
+.halo.one {
+	background: $secondary;
+    top: -2%;
+    left: -2%;
+    width: 90%;
+    height: 90%;
+}
+
+.halo.two {
+	width: 110%;
+    height: 110%;
+    left: -12%;
+    top: -12%;
+}
+
+.halo.three {
+	width: 140%;
+    height: 140%;
+    top: -27%;
+    left: -27%;
+}
+
+/* Section end scallops */
+
+header .banner::after { 
+	@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
+}
+
+

@@ -7,9 +7,8 @@
 	}
 	h2 {
 		@supports (display: grid) {
-			position: absolute;
-			right: 25%;
-			top: 20%;
+			grid-column: 5;
+			grid-row: 1 / span 2;
 		}
 	}
 }
@@ -33,6 +32,13 @@
 			grid-template-columns: 1fr repeat(4, 285px) 1fr;
 			grid-template-rows: repeat(4, 285px);
 		}
+		@media (max-width: 768px) {
+				display: flex;
+				flex-wrap: wrap;
+				h2 {
+					width: 100%;
+				}
+		}
     }
 }
 
@@ -41,7 +47,10 @@
     position: relative;
     padding: 20px;
     width: calc((100% / 3) - 20px);
-    border: 4px dashed $lightBlue;
+	border-top: 4px dashed $gradientPink;
+	border-bottom: 4px dashed $gradientPink;
+	border-left: 4px dashed $gradientYellow;
+	border-right: 4px dashed $gradientYellow;
     @media (max-width: 680px) {
         border-bottom: none;
         border-top: none;
@@ -52,15 +61,36 @@
     @supports (display: grid) {
         width: calc(100% - 35%);
 		height: calc(100% - 35%);
-        transform: rotate(45deg);
-    }
+		transform: rotate(45deg);
+		@media (max-width: 768px) {
+			// width: calc((100% / 3) - 20px);
+			height: initial;
+			transform: none;
+			flex-basis: 230px;
+			flex-grow: 1;
+		}
+	}
 }
 
+@media (max-width: 768px) {
+	.outside.one {
+		margin-right: 10px;
+	}
+	.outside.three {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 550px) {
+	.outside.one {
+		margin-right: 0;
+	}
+}
 //Position diamonds on grid layout
 @supports (display: grid) {
     .one {
         grid-column: 2 / span 2;
-        grid-row: 1 / span 2;
+		grid-row: 1 / span 2;
     }
     .two {
         grid-column: 3 / span 2;
@@ -84,8 +114,26 @@
     box-shadow: 0px 0px 20px 0px rgba(176, 176, 176, 0.2);
     .text-container {
         @supports (display: grid) {
-            transform: rotate(-45deg);
-        }
+			transform: rotate(-45deg);
+			@media (max-width: 984px) {
+				h3 {
+					margin: 5px;
+				}
+				p {
+					margin: 2px;
+				}
+			}
+			@media (max-width: 768px) {
+				height: initial;
+				transform: none;
+				h3 {
+					margin: 10px;
+				}
+				p {
+					margin: 5px;
+				}
+			}
+		}
     }
    	h3 {
 		font-size: 2rem;
@@ -102,33 +150,41 @@
 	width: 20%;
 	height: 20%;
 	position: absolute;
+	&.one, 
+	&.two {
+	 -moz-border-image: -moz-linear-gradient(top, $gradientPink 0%, $gradientYellow 100%);
+  -webkit-border-image: -webkit-linear-gradient(top,$gradientPink 0%, $gradientYellow 100%);
+	  border-image: linear-gradient(to bottom, $gradientPink 0%, $gradientYellow 100%);
+	  border-image-slice: 1;
+	}
+	&.three,
+	&.four {
+		 -moz-border-image: -moz-linear-gradient(top, $gradientYellow 0%, $gradientPink 100%);
+  -webkit-border-image: -webkit-linear-gradient(top,$gradientYellow 0%, $gradientPink 100%);
+	  border-image: linear-gradient(to bottom, $gradientYellow 0%, $gradientPink 100%);
+	  border-image-slice: 1;
+	}
 	&.one {
-		border-top: 4px solid $lightBlue;
-		border-left: 4px solid $lightBlue;
+		border-top: 4px solid transparent;
+		border-left: 4px solid transparent;
 		left: -4px;
 		top: -4px;
 	}
 	&.two {
-		border-top: 4px solid $lightBlue;
-		border-right: 4px solid $lightBlue;
+		border-top: 4px solid transparent;
+		border-right: 4px solid transparent;
 		right: -4px;
 		top:-4px;
-		@media (max-width: 480px) {
-			border-top: none;
-		}
 	}
 	&.three {
-		border-bottom: 4px solid $lightBlue;
-		border-left: 4px solid $lightBlue;
+		border-bottom: 4px solid transparent;
+		border-left: 4px solid transparent;
 		bottom: -4px;
 		left: -4px;
-		@media (max-width: 480px) {
-			border-bottom: none;
-		}
 	}
 	&.four {
-		border-bottom: 4px solid $lightBlue;
-		border-right: 4px solid $lightBlue;
+		border-bottom: 4px solid transparent;
+		border-right: 4px solid transparent;
 		bottom: -4px;
 		right: -4px;
 	}

@@ -2,7 +2,7 @@
 $(function () {
     //Create typing effect
     new TypeIt('.type-it', {
-        strings: ["Front-End Developer", "Enthusiastic Learner", "Avid Googler", "Pug Lover", "Comic Book Fanatic", "Coffee Consumer", "Board Game Geek", "MMO Master"],
+        strings: ["Front-End Developer", "Enthusiastic Learner", "Avid Googler", "Pug Lover", "Comic Book Fanatic", "Coffee Connoisseur", "Board Game Geek", "MMO Master"],
         breakLines: false,
         cursor: false,
         loop: true
@@ -10,6 +10,11 @@ $(function () {
 
     //Apply smooth scroll
     $('a').smoothScroll({ offset: 100, speed: 500 });
+
+    $('.responsive-nav-icon').on('click touch', function() {
+        console.log('clicked');
+        $('.menu').toggleClass('show-menu');
+    });
 
     //Add classes to change fixed nav on scroll
     $(window).scroll(function() {
