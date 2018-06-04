@@ -208,9 +208,35 @@ header .right {
     position: absolute;
     width: 100%;
     top: 10%;
+    height: 100%;
+    z-index: 10;
     img {
         position: absolute;
     }
+}
+
+.x-shape {
+    left: -10%;
+    bottom: 40%;
+}
+.diamond {
+    left: -5%;
+}
+.hatch-circle {
+    top: -30%;
+    left: 10%;
+}
+.triangle {
+    top: -30%;
+    right: 10%;
+}
+.steps {
+    right: 10%;
+    top: -2%;
+}
+.filled-circle {
+    right: 0;
+    bottom: 50%;
 }
 
 /* Halo effect around photo */
