@@ -256,20 +256,35 @@ header .right {
     }
 }
 
+.x-shape,
+.diamond,
+.hatch-circle {
+    animation: float-left 5s ease-in-out infinite;
+}
+
+.triangle,
+.steps,
+.filled-circle {
+    animation: float-right 5s ease-in-out infinite;
+}
+
 .x-shape {
     left: -10%;
     bottom: 40%;
 }
 .diamond {
     left: -5%;
+    animation-delay: 2s;
 }
 .hatch-circle {
     top: -30%;
     left: 10%;
+    animation-delay: 4s;
 }
 .triangle {
     top: -30%;
     right: 10%;
+    animation-delay: 2s;
 }
 .steps {
     right: 10%;
@@ -278,7 +293,10 @@ header .right {
 .filled-circle {
     right: 0;
     bottom: 50%;
+    animation-delay: 3s;
 }
+
+
 
 /* Halo effect around photo */
 
@@ -314,6 +332,31 @@ header .right {
 
 header .banner::after { 
 	@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
+}
+
+
+@keyframes float-right {
+	0% {
+		transform: translateY(0px) translateX(0px) rotate(0);
+	}
+	50% {
+		transform: translateY(-40px) translateX(20px) rotate(10deg);
+	}
+	100% {
+		transform: translateY(0px) translateX(0px) rotate(0);
+	}
+}
+
+@keyframes float-left {
+	0% {
+		transform: translateY(0px) translateX(0px) rotate(0);
+	}
+	50% {
+		transform: translateY(-40px) translateX(-20px) rotate(-10deg);
+	}
+	100% {
+		transform: translateY(0px) translateX(0px) rotate(0);
+	}
 }
 
 
