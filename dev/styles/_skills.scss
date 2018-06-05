@@ -6,6 +6,7 @@
 		@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
 	}
 	h2 {
+		width:100%;
 		@supports (display: grid) {
 			grid-column: 5;
 			grid-row: 1 / span 2;
@@ -16,10 +17,11 @@
 .skills-container {
 	//Flexbox Fallback
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	@media (max-width: 680px) {
-		flex-wrap: wrap;
-	}
+	flex-basis: 230px;
+	flex-grow: 1;
+
 	//If grid supported, create complex layout
     @supports (display:grid) {
 		display: grid;

@@ -44,6 +44,14 @@ textarea {
 	resize: none;
 }
 
+//Set image widths for IE
+.headshot-photo,
+.about img,
+.project img,
+.banner.bottom img {
+	width: 100%;
+}
+
 // ABOUT SECTION STYLES
 
 .about {
@@ -193,20 +201,20 @@ textarea {
 		padding: 20px;
 	}
 	.right-align .text-container {
-		align-items: flex-end;
+		justify-content: flex-end;
 		@media (max-width: 768px) {
-			align-items: center;
+			justify-content: center;
 		}
 	}
 	.left-align .text-container {
-		align-items: flex-start;
+		justify-content: flex-start;
 		@media (max-width: 768px) {
-			align-items: center;
+			justify-content: center;
 		}
 	}
 	.text-container {
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 		
 	}
 	.skills-used {
@@ -278,6 +286,9 @@ textarea {
 		@media (max-width: 768px) {
 			margin-bottom: 40px;
 		}
+	}
+	h3, h4 {
+		width: 100%;
 	}
 	h4 {
 		color: $gradientYellow;
