@@ -1,7 +1,6 @@
 .skills {
 	background: linear-gradient(to bottom, #f9f9ff 5%, #fff 10%, $secondary 90%, $lightBlue 95%);
 	position: relative;
-	padding-bottom: 150px;
 	&:after {
 		@include scallops (radial-gradient(circle at 50% 0%, transparent 25%, rgba(0,0,0,.1) 26%, white 30%), 0);
 	}

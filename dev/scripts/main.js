@@ -9,13 +9,20 @@ $(function () {
     });
 
     //Apply smooth scroll
-    $('a').smoothScroll({ speed: 500 });
+    $('a').smoothScroll({ offset: -5, speed: 500 });
 
     $('.responsive-nav-icon').on('click touch', function() {
         console.log('clicked');
         $('.menu').toggleClass('show-menu');
         $('.responsive-nav-icon').toggleClass('change');
         $('.bar').toggleClass('animate');
+    });
+
+    $('ul.menu > li').on('click touch', function() {
+        if ($('.menu').hasClass('show-menu')) {
+            $('.menu').toggleClass('show-menu');
+            $('.responsive-nav-icon').toggleClass('change');
+        }
     });
 
     //Add classes to change fixed nav on scroll
