@@ -135,7 +135,7 @@ textarea {
 }
 
 .about .button:hover {
-    background: linear-gradient(to left, #f40e67 0%, #fccd11 100%);
+    background: linear-gradient(to left, $gradientPink 0%, $gradientYellow 100%);
 }
 
 .about::after { 
@@ -191,6 +191,29 @@ textarea {
 	flex-wrap: wrap;
 	@media (max-width: 480px) {
 		padding: 20px;
+	}
+	.right-align .text-container {
+		align-items: flex-end;
+		@media (max-width: 768px) {
+			align-items: center;
+		}
+	}
+	.left-align .text-container {
+		align-items: flex-start;
+		@media (max-width: 768px) {
+			align-items: center;
+		}
+	}
+	.text-container {
+		display: flex;
+		flex-direction: column;
+		
+	}
+	.skills-used {
+		border-top: 2px solid $gradientPink;
+		border-bottom: 2px solid $gradientPink;
+		padding: 5px;
+		margin: 0;
 	}
 	.button-container {
 		width: 100%;
@@ -252,12 +275,16 @@ textarea {
 	h2 {
 		margin: 0 0 86px 0;
 		text-align: center;
+		@media (max-width: 768px) {
+			margin-bottom: 40px;
+		}
 	}
 	h4 {
 		color: $gradientYellow;
 		font-weight: 400;
 		font-size: 1.4rem;
 		text-transform: uppercase;
+		margin: 0;
 	}
 }
 		

@@ -14,6 +14,7 @@ $(function () {
     $('.responsive-nav-icon').on('click touch', function() {
         console.log('clicked');
         $('.menu').toggleClass('show-menu');
+        $('.responsive-nav-icon').toggleClass('change');
     });
 
     //Add classes to change fixed nav on scroll
